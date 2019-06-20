@@ -1,0 +1,52 @@
+<div class='container-fluid panel-box'>
+
+  <div class='row'>
+    <div class="col-sm-2" style="overflow:hidden;">
+      <label style="float: right">
+        UserId<sup style="color: red">*</sup>
+      </label>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      {{details.userId}}
+    </div>
+
+
+  </div>
+
+  <div class='row'>
+    <div class=" col-sm-2" style="overflow:hidden;">
+      <label style="float: right">
+        Body<sup style="color: red">*</sup>
+      </label>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      {{details.body}}
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-sm-2" style="overflow:hidden;">
+      <label style="float: right">
+        Title<sup style="color: red">*</sup>
+      </label>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      {{details.title}}
+    </div>
+  </div>
+</div>
+
+<h2 class="heading-align" style="text-align: center">Comments</h2>
+
+<div class="box">
+  <div class="data">
+    <ul *ngFor='let c of comments'>
+      <label class="title">Title :  </label><span class="body">{{c.name}}</span><br>
+      <label class="title">Email :  </label><span class="body">{{c.email}}</span><br>
+      <label class="title">Body :  </label><span class="body">{{c.body}}</span>
+    </ul>
+  </div>
+</div>

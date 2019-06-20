@@ -1,0 +1,24 @@
+<app-header></app-header>
+<br>
+<br>
+<br>
+<div class='add-btn'>
+  <button (click)='openDialog("add")' class='btn btn-secondary'  data-toggle="modal" data-target="#myModal">ADD</button>
+</div>
+
+<div class="box">
+  <div class="data">
+          
+  <ul *ngFor='let l of list' >
+
+    <span id="title"> {{l.title}}</span>
+  <span id="body"> {{l.body}}</span>
+  
+  
+  <button style="float:left " class='btn btn-primary' (click)='viewPost(l.id)'>View</button>
+    <button style="float:right " class='btn btn-secondary' (click)='openDialog("edit", l)' data-toggle="modal" data-target="#myModal">Edit</button>
+
+  </ul>
+  </div>
+  </div>
+ 

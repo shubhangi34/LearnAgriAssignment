@@ -1,0 +1,130 @@
+<!-- <div class='dialog-pos'>
+<h2  >lol</h2>
+
+    <form [formGroup]="postForm">
+  
+  </form> -
+
+
+
+  <div class="row d-flex align-items-center justify-content-center form-group footer-align">
+    <button mat-button mat-dialog-close class="btn btn-secondary mr-5">Close</button>
+    <button mat-button type="submit" style='margin-left:20px;'class="btn btn-primary" (click)="createPost()" >Done</button>
+  </div>
+
+</div> -->
+<!--
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button mat-button type="submit" style='margin-left:20px;' class="btn btn-primary"
+          (click)="createPost()">Done</button>
+        <button type="button" class="close" data-dismiss="modal" #closeAddExpenseModal>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="add-page">
+
+
+
+          <div [formGroup]="postForm">
+
+            <div class='row'>
+              <div class=" col-sm-2" style="overflow:hidden;">
+                <label style="float: right">
+                  Title<sup style="color: red">*</sup>
+                </label>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <textarea type='text' style="width: 300px;" class='form-control' formControlName='title'></textarea>
+
+              </div>
+            </div>
+
+
+            <div class='row ' style="margin-top: 10px">
+              <div class=" col-sm-2" style="overflow:hidden;">
+                <label style="float: right">
+                  Body<sup style="color: red">*</sup>
+                </label>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <textarea type='text' style="width: 300px;" class='form-control' formControlName='body'></textarea>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<h2 class="heading-align" mat-dialog-title>
+  {{isEdit? 'Edit Post' : 'Add Post'}}</h2>
+
+<mat-dialog-content>
+
+  <form [formGroup]="postForm" (ngSubmit)="createPost()" id="postDialog">
+
+    <div class='row'>
+      <div class=" col-sm-2" style="overflow:hidden;">
+        <label style="float: right">
+          UserId<sup style="color: red">*</sup>
+        </label>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <input type='number' style="width: 300px;" class='form-control' formControlName='userId'>
+        <app-control-message [control]="postForm.get('userId')"></app-control-message>
+      </div>
+    </div>
+
+    <div class='row' style="margin-top: 10px">
+      <div class=" col-sm-2" style="overflow:hidden;">
+        <label style="float: right">
+          Title<sup style="color: red">*</sup>
+        </label>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <textarea type='text' style="width: 300px;" class='form-control' formControlName='title'></textarea>
+        <app-control-message [control]="postForm.get('title')"></app-control-message>
+
+      </div>
+    </div>
+
+
+    <div class='row ' style="margin-top: 10px">
+      <div class=" col-sm-2" style="overflow:hidden;">
+        <label style="float: right">
+          Body<sup style="color: red">*</sup>
+        </label>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1">:</div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <textarea type='text' style="width: 300px;" class='form-control' formControlName='body'></textarea>
+        <app-control-message [control]="postForm.get('body')"></app-control-message>
+
+      </div>
+    </div>
+
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="form-group footer-align">
+    <button mat-button mat-dialog-close class="btn btn-secondary" style="margin-right: 10px;">Close</button>
+    <button mat-button type="submit" class="btn btn-primary" form="postDialog">Done</button>
+  </div>
+</mat-dialog-actions>
